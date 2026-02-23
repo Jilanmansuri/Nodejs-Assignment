@@ -133,26 +133,25 @@ https://nodejs-assignment-t5ij.onrender.com/students/branch/CSE
 
 1. Clone the repository
 
-git clone https://github.com/Jilanmansuri/Nodejs-Assignment.git
-cd student-cgpa-api  
+git clone https://github.com/Jilanmansuri/Nodejs-Assignment.git  
+
+cd Nodejs-Assignment  
 
 2. Install dependencies
 
 npm install  
 
-3. Start the server
-
-npm start  
-
-Or for development:
+3. Run with nodemon (development mode)
 
 npm run dev  
+
+Or run normally:
+
+npm start  
 
 4. Server runs at:
 
 http://localhost:3000  
-
----
 
 ## 📊 Student Data Sample
 

@@ -128,30 +128,43 @@ https://nodejs-assignment-t5ij.onrender.com/students/branch/CSE
 ### 🔧 Prerequisites
 - Node.js (v14 or higher)
 - npm (v6 or higher)
-
 ### ▶️ Steps to Run Locally
 
-1. Clone the repository
+#### 1️⃣ Clone the Repository
 
-git clone https://github.com/Jilanmansuri/Nodejs-Assignment.git  
+```bash
+git clone https://github.com/Jilanmansuri/Nodejs-Assignment.git
+cd Nodejs-Assignment
+```
 
-cd Nodejs-Assignment  
+#### 2️⃣ Install Dependencies
 
-2. Install dependencies
+```bash
+npm install
+```
 
-npm install  
+#### 3️⃣ Run the Server
 
-3. Run with nodemon (development mode)
+🔹 Development Mode (with nodemon)
 
-npm run dev  
+```bash
+npm run dev
+```
 
-Or run normally:
+🔹 Normal Mode
 
-npm start  
+```bash
+npm start
+```
 
-4. Server runs at:
+#### 4️⃣ Server runs at:
 
-http://localhost:3000  
+```
+http://localhost:3000
+```
+
+
+
 
 ## 📊 Student Data Sample
 

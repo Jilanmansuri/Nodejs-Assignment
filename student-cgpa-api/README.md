@@ -123,7 +123,7 @@ http://localhost:3000/students/branch/CSE
 
 1. Clone the repository
 
-git clone https://github.com/your-username/student-cgpa-api.git  
+git clone https://github.com/Jilanmansuri/Nodejs-Assignment.git
 cd student-cgpa-api  
 
 2. Install dependencies

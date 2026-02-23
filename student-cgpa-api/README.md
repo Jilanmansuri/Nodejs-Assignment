@@ -113,6 +113,16 @@ http://localhost:3000/students/branch/CSE
 
 ---
 
+
+## 🌍 Sample API URLs (Browser Testing - Live)
+
+https://nodejs-assignment-t5ij.onrender.com/students  
+https://nodejs-assignment-t5ij.onrender.com/students/topper  
+https://nodejs-assignment-t5ij.onrender.com/students/average  
+https://nodejs-assignment-t5ij.onrender.com/students/count  
+https://nodejs-assignment-t5ij.onrender.com/students/1  
+https://nodejs-assignment-t5ij.onrender.com/students/branch/CSE  
+
 ## 🛠 Installation & Setup
 
 ### 🔧 Prerequisites

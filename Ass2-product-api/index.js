@@ -112,12 +112,34 @@ app.post("/products", (req, res) => {
     };
 
     products.push(newProduct);
-
     res.status(201).json(newProduct);
 });
 
 
 
+
+app.put("/products/:id", (req, res) => {
+
+    const productId = Number(req.params.id);
+
+    const index = products.findIndex(p => p.id === productId);
+
+    if (index === -1) {
+        return res.status(404).json({ message: "Product not found" });
+    }
+
+    // Replace all fields except id
+    products[index] = {
+        id: productId,
+        name: req.body.name,
+        category: req.body.category,
+        price: req.body.price,
+        stock: req.body.stock,
+        rating: req.body.rating
+    };
+
+    res.status(200).json(products[index]);
+});
 
 
 

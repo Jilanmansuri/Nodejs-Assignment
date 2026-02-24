@@ -57,7 +57,7 @@ app.get("/", (req, res) => {
 
 
 
-// get All Student
+// get All Products
 
 app.get("/products", (req, res) => {
     console.log(products)
@@ -65,7 +65,7 @@ app.get("/products", (req, res) => {
 });
 
 
-// find student through id
+// find Products through id
 
 app.get("/products/:id", (req, res) => {
     const productId = Number(req.params.id);
@@ -81,7 +81,7 @@ app.get("/products/:id", (req, res) => {
 
 
 
-// fiter student through BranchName
+// fiter products by category
 
 app.get("/products/category/:categoryName", (req, res) => {
     const categoryName = req.params.categoryName;
@@ -100,6 +100,8 @@ app.get("/products/category/:categoryName", (req, res) => {
 
 
 
+
+// Add product
 app.post("/products", (req, res) => {
 
     const newProduct = {
@@ -118,6 +120,7 @@ app.post("/products", (req, res) => {
 
 
 
+// update all field except id
 app.put("/products/:id", (req, res) => {
     const productId = Number(req.params.id);
     const index = products.findIndex(p => p.id === productId);
@@ -140,6 +143,7 @@ app.put("/products/:id", (req, res) => {
 
 
 
+// update stock
 app.put("/products/:id/stock", (req, res) => {
 
     const productId = Number(req.params.id);
@@ -158,7 +162,7 @@ app.put("/products/:id/stock", (req, res) => {
 
 
 
-
+// update only price
 app.put("/products/:id/price", (req, res) => {
 
     const productId = Number(req.params.id);

@@ -100,20 +100,20 @@ app.get("/products/category/:categoryName", (req, res) => {
 
 
 
-app.post("/user", (req, res) => {
-    const newUser = {
-        att: req.body.att,
-        uid: req.body.uid,
-        totalsub: req.body.totalsub,
-        bonus: req.body.bonus,
-        name: req.body.name
-    };
-    users.push(newUser);
+app.post("/products", (req, res) => {
 
-    res.status(201).json({
-        message: "User created",
-        user: newUser
-    });
+    const newProduct = {
+        id: products.length > 0 ? products[products.length - 1].id + 1 : 1,
+        name: req.body.name,
+        category: req.body.category,
+        price: req.body.price,
+        stock: req.body.stock,
+        rating: req.body.rating
+    };
+
+    products.push(newProduct);
+
+    res.status(201).json(newProduct);
 });
 
 

@@ -7,46 +7,46 @@ app.use(cors());
 
 
 const products = [
-  {
-    id: 1,
-    name: "Wireless Mouse",
-    category: "Electronics",
-    price: 799,
-    stock: 25,
-    rating: 4.3
-  },
-  {
-    id: 2,
-    name: "Running Shoes",
-    category: "Footwear",
-    price: 2499,
-    stock: 40,
-    rating: 4.5
-  },
-  {
-    id: 3,
-    name: "Laptop Stand",
-    category: "Accessories",
-    price: 999,
-    stock: 30,
-    rating: 4.2
-  },
-  {
-    id: 4,
-    name: "Smart Watch",
-    category: "Electronics",
-    price: 4999,
-    stock: 12,
-    rating: 4.4
-  },
-  {
-    id: 5,
-    name: "Backpack",
-    category: "Fashion",
-    price: 1599,
-    stock: 50,
-    rating: 4.1
-  }
+    {
+        id: 1,
+        name: "Wireless Mouse",
+        category: "Electronics",
+        price: 799,
+        stock: 25,
+        rating: 4.3
+    },
+    {
+        id: 2,
+        name: "Running Shoes",
+        category: "Footwear",
+        price: 2499,
+        stock: 40,
+        rating: 4.5
+    },
+    {
+        id: 3,
+        name: "Laptop Stand",
+        category: "Accessories",
+        price: 999,
+        stock: 30,
+        rating: 4.2
+    },
+    {
+        id: 4,
+        name: "Smart Watch",
+        category: "Electronics",
+        price: 4999,
+        stock: 12,
+        rating: 4.4
+    },
+    {
+        id: 5,
+        name: "Backpack",
+        category: "Fashion",
+        price: 1599,
+        stock: 50,
+        rating: 4.1
+    }
 ];
 
 
@@ -91,7 +91,7 @@ app.get("/products/category/:categoryName", (req, res) => {
     );
 
     if (filteredproducts.length === 0) {
-        return res.status(404).json([ ]);
+        return res.status(404).json([]);
     }
 
     res.status(200).json(filteredproducts);
@@ -137,6 +137,42 @@ app.put("/products/:id", (req, res) => {
     res.status(200).json(products[index]);
 });
 
+
+
+
+app.put("/products/:id/stock", (req, res) => {
+
+    const productId = Number(req.params.id);
+
+    const index = products.findIndex(p => p.id === productId);
+
+    if (index === -1) {
+        return res.status(404).json({ message: "Product not found" });
+    }
+
+    products[index].stock = req.body.stock;
+
+    res.status(200).json(products[index]);
+});
+
+
+
+
+
+app.put("/products/:id/price", (req, res) => {
+
+    const productId = Number(req.params.id);
+
+    const index = products.findIndex(p => p.id === productId);
+
+    if (index === -1) {
+        return res.status(404).json({ message: "Product not found" });
+    }
+
+    products[index].price = req.body.price;
+
+    res.status(200).json(products[index]);
+});
 
 
 

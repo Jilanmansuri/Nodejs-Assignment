@@ -168,6 +168,7 @@ http://localhost:3000
 
 ## 📊 Student Data Sample
 
+```js
 {
   id: 1,
   name: "Aarav Sharma",
@@ -175,6 +176,8 @@ http://localhost:3000
   semester: 8,
   cgpa: 9.3
 }
+```
+
 
 Available Branches:
 CSE, IT, ECE, AI, Data Science

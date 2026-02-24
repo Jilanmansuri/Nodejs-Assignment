@@ -119,16 +119,12 @@ app.post("/products", (req, res) => {
 
 
 app.put("/products/:id", (req, res) => {
-
     const productId = Number(req.params.id);
-
     const index = products.findIndex(p => p.id === productId);
-
     if (index === -1) {
         return res.status(404).json({ message: "Product not found" });
     }
 
-    // Replace all fields except id
     products[index] = {
         id: productId,
         name: req.body.name,

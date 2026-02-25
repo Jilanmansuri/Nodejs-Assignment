@@ -100,27 +100,21 @@ Product structure:
 
 ## 🔹 GET Routes
 
----
-
 ### 1️⃣ GET `/products`
 
-Get all products.
-
+- Returns all products  
 - Status Code: `200 OK`
-- Returns full products array
 
 ---
 
 ### 2️⃣ GET `/products/:id`
-
-Get product by ID.
 
 Example:
 ```
 GET /products/3
 ```
 
-- If found → `200 OK`
+- Returns product by ID  
 - If not found → `404 Not Found`
 
 Error Response:
@@ -134,24 +128,19 @@ Error Response:
 
 ### 3️⃣ GET `/products/category/:categoryName`
 
-Get products by category (case-insensitive).
-
 Example:
 ```
 GET /products/category/Electronics
 ```
 
-- If products found → `200 OK`
-- If none found → `404 Not Found`
-- Returns filtered array
+- Returns products by category (case-insensitive)  
+- If not found → `404 Not Found`
 
 ---
 
 # ➕ POST Route
 
 ### 4️⃣ POST `/products`
-
-Add a new product.
 
 Request Body:
 ```json
@@ -164,41 +153,23 @@ Request Body:
 }
 ```
 
-Features:
-
-- Auto-generates ID (last ID + 1)
-- Pushes into in-memory array
-- Returns created product
+- Auto-generates ID  
+- Adds product to array  
 - Status `201 Created`
 
 ---
 
 # 🔄 PUT Routes
 
----
-
 ### 5️⃣ PUT `/products/:id`
 
-Replace entire product (except ID).
-
-- ID remains unchanged
-- All other fields replaced
+- Replaces entire product except ID  
+- Status `200 OK`  
 - If not found → `404 Not Found`
-
-Error Response:
-```json
-{
-  "message": "Product not found"
-}
-```
-
-Status: `200 OK`
 
 ---
 
 ### 6️⃣ PUT `/products/:id/stock`
-
-Update only stock value.
 
 Request Body:
 ```json
@@ -207,15 +178,12 @@ Request Body:
 }
 ```
 
-- Updates only stock field
-- If not found → `404 Not Found`
+- Updates only stock  
 - Status `200 OK`
 
 ---
 
 ### 7️⃣ PUT `/products/:id/price`
-
-Update only price value.
 
 Request Body:
 ```json
@@ -224,39 +192,33 @@ Request Body:
 }
 ```
 
-- Updates only price field
-- If not found → `404 Not Found`
+- Updates only price  
 - Status `200 OK`
 
 ---
 
 # 🧠 Concepts Used
 
-- Express routing
-- Route parameters (`req.params`)
-- Request body (`req.body`)
-- Array methods (`find()`, `findIndex()`, `filter()`)
-- HTTP status codes (`200`, `201`, `404`)
-- CORS middleware
-- In-memory data handling
+- Express Routing  
+- Middleware (`express.json()`, `cors()`)  
+- Route Parameters  
+- Array Methods (`find()`, `findIndex()`, `filter()`)  
+- HTTP Status Codes  
+- In-Memory Data Handling  
 
 ---
 
 # 🧪 Postman Documentation
 
-Postman API Documentation:
-```
-https://documenter.getpostman.com/view/50840642/2sBXcGEzkV
-```
+Postman API Documentation:  
+<https://documenter.getpostman.com/view/50840642/2sBXcGEzkV>
 
 ---
 
-# 🌐 Render Deployment
+# 🌐 Live API (Render Deployment)
 
-## 🌐 Live API (Render Deployment)
-```
-https://nodejs-assignment-1-v5lc.onrender.com
-```
+Live API Base URL:  
+<https://nodejs-assignment-1-v5lc.onrender.com>
 
 ---
 
@@ -272,6 +234,6 @@ https://nodejs-assignment-1-v5lc.onrender.com
 
 # 👨‍💻 Author
 
-Your Name  
-Course Name  
-Year  
+Jilan Mansuri  
+Node.js Assignment – E-Commerce Product API  
+Year: 2026

@@ -244,7 +244,7 @@ Request Body:
 
 # 🧪 Postman Documentation
 
-Add your Postman Documentation link here:
+Postman API Documentation:
 ```
 https://documenter.getpostman.com/view/50840642/2sBXcGEzkV
 ```
@@ -253,7 +253,7 @@ https://documenter.getpostman.com/view/50840642/2sBXcGEzkV
 
 # 🌐 Render Deployment
 
-Add your Render deployed API link here:
+## 🌐 Live API (Render Deployment)
 ```
 https://nodejs-assignment-1-v5lc.onrender.com
 ```

@@ -67,6 +67,7 @@ app.get("/products", (req, res) => {
 
 // find Products through id
 
+
 app.get("/products/:id", (req, res) => {
     const productId = Number(req.params.id);
     const product = products.find(u => u.id === productId);

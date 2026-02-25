@@ -14,9 +14,7 @@ The API implements:
 - ✅ 3 PUT routes  
 - ✅ Proper HTTP status codes  
 - ✅ REST principles  
-- ❌ No database  
-- ❌ No authentication  
-- ❌ No validation libraries  
+
 
 ---
 

@@ -13,8 +13,9 @@ The API implements:
 - ✅ 1 POST route  
 - ✅ 3 PUT routes  
 - ✅ Proper HTTP status codes  
-- ✅ REST principles  
-
+- ❌ No database  
+- ❌ No authentication  
+- ❌ No validation libraries  
 
 ---
 
@@ -47,23 +48,38 @@ npm install
 node index.js
 ```
 
-Or (if using nodemon):
-
-```bash
-npx nodemon index.js
-```
-
 Server runs on:
 
 ```
-http://localhost:5000
+http://localhost:3001
+```
+
+Console Output:
+```
+Server started on port 3001
 ```
 
 ---
 
-# 📦 Product Structure
+# 🏠 Base Route
 
-Each product follows this format:
+### GET `/`
+
+Returns simple message:
+
+```
+Express server is running
+```
+
+Status: `200 OK`
+
+---
+
+# 📦 Initial Product Data
+
+The API starts with 5 predefined products stored in an in-memory array.
+
+Product structure:
 
 ```js
 {
@@ -84,12 +100,14 @@ Each product follows this format:
 
 ## 🔹 GET Routes
 
+---
+
 ### 1️⃣ GET `/products`
 
 Get all products.
 
 - Status Code: `200 OK`
-- Returns full product array
+- Returns full products array
 
 ---
 
@@ -105,20 +123,27 @@ GET /products/3
 - If found → `200 OK`
 - If not found → `404 Not Found`
 
+Error Response:
+```json
+{
+  "message": "User not found"
+}
+```
+
 ---
 
 ### 3️⃣ GET `/products/category/:categoryName`
 
-Get products by category.
+Get products by category (case-insensitive).
 
 Example:
 ```
 GET /products/category/Electronics
 ```
 
+- If products found → `200 OK`
+- If none found → `404 Not Found`
 - Returns filtered array
-- If none found → returns empty array `[]`
-- Status `200 OK`
 
 ---
 
@@ -141,8 +166,8 @@ Request Body:
 
 Features:
 
-- Auto-generates ID
-- Pushes into array
+- Auto-generates ID (last ID + 1)
+- Pushes into in-memory array
 - Returns created product
 - Status `201 Created`
 
@@ -150,12 +175,24 @@ Features:
 
 # 🔄 PUT Routes
 
+---
+
 ### 5️⃣ PUT `/products/:id`
 
 Replace entire product (except ID).
 
-- If found → `200 OK`
+- ID remains unchanged
+- All other fields replaced
 - If not found → `404 Not Found`
+
+Error Response:
+```json
+{
+  "message": "Product not found"
+}
+```
+
+Status: `200 OK`
 
 ---
 
@@ -170,7 +207,7 @@ Request Body:
 }
 ```
 
-- Returns updated product
+- Updates only stock field
 - If not found → `404 Not Found`
 - Status `200 OK`
 
@@ -187,38 +224,38 @@ Request Body:
 }
 ```
 
-- Returns updated product
+- Updates only price field
 - If not found → `404 Not Found`
 - Status `200 OK`
 
 ---
 
-# 🧠 Features Implemented
+# 🧠 Concepts Used
 
+- Express routing
 - Route parameters (`req.params`)
-- Request body handling (`req.body`)
-- Array methods (`find()`, `filter()`)
-- Proper status codes (`200`, `201`, `404`)
-- RESTful route design
-- CORS enabled
+- Request body (`req.body`)
+- Array methods (`find()`, `findIndex()`, `filter()`)
+- HTTP status codes (`200`, `201`, `404`)
+- CORS middleware
 - In-memory data handling
 
 ---
 
 # 🧪 Postman Documentation
 
-Postman Collection Link:
+Add your Postman Documentation link here:
 ```
-<Add your Postman documentation link here>
+<Add your Postman documentation link>
 ```
 
 ---
 
-# 🌐 Live Deployment
+# 🌐 Render Deployment
 
-Render Deployment Link:
+Add your Render deployed API link here:
 ```
-<Add your Render deployed API link here>
+<Add your Render link>
 ```
 
 ---
@@ -226,7 +263,7 @@ Render Deployment Link:
 # 📁 Submission Checklist
 
 - [x] GitHub Repository  
-- [x] README with all routes  
+- [x] README Updated  
 - [x] Postman Documentation  
 - [x] Render Deployment  
 - [x] All 7 routes working  

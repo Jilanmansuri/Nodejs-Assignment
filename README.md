@@ -26,6 +26,7 @@ Includes static and dynamic GET routes with proper HTTP status codes and error h
 6. GET `/students/branch/:branchName` – Get students by branch  
 
 ---
+---
 
 # 🛒 Assignment 2 – E-Commerce Product API
 

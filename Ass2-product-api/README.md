@@ -32,7 +32,7 @@ The API implements:
 ## 1️⃣ Clone Repository
 
 ```bash
-git clone <your-github-repo-link>
+git clone https://github.com/Jilanmansuri/Nodejs-Assignment.git
 cd ecommerce-product-api
 ```
 
@@ -246,7 +246,7 @@ Request Body:
 
 Add your Postman Documentation link here:
 ```
-<Add your Postman documentation link>
+https://documenter.getpostman.com/view/50840642/2sBXcGEzkV
 ```
 
 ---
@@ -255,7 +255,7 @@ Add your Postman Documentation link here:
 
 Add your Render deployed API link here:
 ```
-<Add your Render link>
+https://nodejs-assignment-1-v5lc.onrender.com
 ```
 
 ---

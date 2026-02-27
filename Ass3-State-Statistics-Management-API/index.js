@@ -7,7 +7,7 @@ app.use(express.json());
 app.use(cors());
 
 
-const states = [
+let states = [
   { id: 1, name: "Andhra Pradesh", population: 49386799, literacyRate: 67.02, annualBudget: 279279, gdp: 14000000 },
   { id: 2, name: "Arunachal Pradesh", population: 1383727, literacyRate: 65.38, annualBudget: 28000, gdp: 300000 },
   { id: 3, name: "Assam", population: 31205576, literacyRate: 72.19, annualBudget: 122000, gdp: 4500000 },
@@ -209,7 +209,9 @@ app.delete("/states/name/:stateName", (req, res) => {
 
 
 app.delete("/states/low-literacy/:percentage", (req, res) => {
+
     const percentage = Number(req.params.percentage);
+
     const before = states.length;
 
     states = states.filter(s => s.literacyRate >= percentage);
@@ -221,7 +223,6 @@ app.delete("/states/low-literacy/:percentage", (req, res) => {
 
 
 
-
-app.listen(3001, () => {
-    console.log("Server started on port 3001");
+app.listen(3000, () => {
+    console.log("Server started on port 3000");
 });

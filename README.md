@@ -51,8 +51,68 @@ Supports GET, POST, and PUT routes following REST principles.
 7. PUT `/products/:id/price` – Update product price  
 
 ---
+---
 
-# 🛠 Tech Stack Used
+
+# 🗺️ Assignment 3 – State Statistics Management API
+
+## 📌 Description
+A complete REST API that manages statistical data of Indian states using an in-memory JSON array.  
+Implements full REST architecture including GET, POST, PUT, PATCH, and DELETE routes with proper HTTP status codes and dynamic route handling.
+
+---
+
+## 🌐 Live API
+<https://your-render-link-here>
+
+---
+
+## 🧪 Postman Documentation
+<https://your-postman-link-here>
+
+---
+
+## 🔹 Implemented Routes
+
+### 🔹 GET Routes
+
+1. GET `/states` – Get all states  
+2. GET `/states/:id` – Get state by ID  
+3. GET `/states/highest-gdp` – Get state with highest GDP  
+
+---
+
+### 🔹 POST Route
+
+4. POST `/states` – Create new state  
+
+---
+
+### 🔹 PUT Routes
+
+5. PUT `/states/:id` – Replace entire state  
+6. PUT `/states/:id/budget` – Update annual budget  
+7. PUT `/states/:id/population` – Update population  
+
+---
+
+### 🔹 PATCH Routes
+
+8. PATCH `/states/:id/literacy` – Update literacy rate  
+9. PATCH `/states/:id/gdp` – Update GDP  
+10. PATCH `/states/:id` – Partially update any field  
+
+---
+
+### 🔹 DELETE Routes
+
+11. DELETE `/states/:id` – Delete state by ID  
+12. DELETE `/states/name/:stateName` – Delete state by name  
+13. DELETE `/states/low-literacy/:percentage` – Delete states below literacy threshold  
+
+---
+
+## 🛠 Tech Stack Used
 
 - Node.js  
 - Express.js  

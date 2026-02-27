@@ -93,19 +93,12 @@ app.put("/states/:id", (req, res) => {
     if (index === -1) {
         return res.status(404).json({ message: "State not found" });
     }
-
     states[index] = {
-        id: stateId,
-        name: req.body.name,
-        population: req.body.population,
-        literacyRate: req.body.literacyRate,
-        annualBudget: req.body.annualBudget,
-        gdp: req.body.gdp
+        ...states[index],   
+        ...req.body         
     };
-
     res.status(200).json(states[index]);
 });
-
 
 
 app.put("/states/:id/budget", (req, res) => {

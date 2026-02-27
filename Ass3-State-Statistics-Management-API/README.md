@@ -286,14 +286,14 @@ Response:
 # 🧪 Postman Documentation
 
 Postman API Documentation:  
-<https://your-postman-link-here>
+https://documenter.getpostman.com/view/50840642/2sBXcHhyWc
 
 ---
 
 # 🌐 Live API (Render Deployment)
 
 Live API Base URL:  
-<https://your-render-link-here>
+https://nodejs-assignment-2-zyac.onrender.com
 
 ---
 

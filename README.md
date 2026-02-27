@@ -63,12 +63,12 @@ Implements full REST architecture including GET, POST, PUT, PATCH, and DELETE ro
 ---
 
 ## 🌐 Live API
-<https://your-render-link-here>
+<https://nodejs-assignment-2-zyac.onrender.com>
 
 ---
 
 ## 🧪 Postman Documentation
-<https://your-postman-link-here>
+<https://documenter.getpostman.com/view/50840642/2sBXcHhyWc>
 
 ---
 

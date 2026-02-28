@@ -53,12 +53,11 @@ app.get("/states/highest-gdp", (req, res) => {
     if (states.length === 0) {
         return res.status(404).json({ message: "No states found" });
     }
-    let highest = states[0];   
-    for (let i = 1; i < states.length; i++) {
-        if (states[i].gdp > highest.gdp) {
-            highest = states[i];   
-        }
-    }
+    
+    const highest = states.reduce((max, current) => {
+        return current.gdp > max.gdp ? current : max;
+    });
+
     res.status(200).json(highest);
 });
 

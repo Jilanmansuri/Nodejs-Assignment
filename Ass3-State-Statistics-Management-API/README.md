@@ -34,8 +34,8 @@ The API implements:
 ## 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/your-username/state-statistics-api.git
-cd state-statistics-api
+git clone https://github.com/Jilanmansuri/Nodejs-Assignment.git
+cd Ass3-State-Statistics-Management-API
 ```
 
 ## 2️⃣ Install Dependencies

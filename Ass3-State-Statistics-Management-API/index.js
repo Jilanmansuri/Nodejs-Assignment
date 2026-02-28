@@ -50,11 +50,19 @@ app.get("/states", (req, res) => {
 
 // GET: Find state with highest GDP
 app.get("/states/highest-gdp", (req, res) => {
-    const highest = states.reduce((max, s) =>
-        s.gdp > max.gdp ? s : max
-    );
+    if (states.length === 0) {
+        return res.status(404).json({ message: "No states found" });
+    }
+    let highest = states[0];   
+    for (let i = 1; i < states.length; i++) {
+        if (states[i].gdp > highest.gdp) {
+            highest = states[i];   
+        }
+    }
     res.status(200).json(highest);
 });
+
+
 
 // GET: Retrieve state by ID
 app.get("/states/:id", (req, res) => {

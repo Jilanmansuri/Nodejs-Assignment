@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-
+// States database
 let states = [
   { id: 1, name: "Andhra Pradesh", population: 49386799, literacyRate: 67.02, annualBudget: 279279, gdp: 14000000 },
   { id: 2, name: "Arunachal Pradesh", population: 1383727, literacyRate: 65.38, annualBudget: 28000, gdp: 300000 },
@@ -38,17 +38,17 @@ let states = [
   { id: 28, name: "West Bengal", population: 91276115, literacyRate: 76.26, annualBudget: 310000, gdp: 16000000 }
 ];
 
-
+// GET: Home route - Test API is running
 app.get("/", (req, res) => {
     res.send("State API Running");
 });
 
-
+// GET: Retrieve all states
 app.get("/states", (req, res) => {
     res.status(200).json(states);
 });
 
-
+// GET: Find state with highest GDP
 app.get("/states/highest-gdp", (req, res) => {
     const highest = states.reduce((max, s) =>
         s.gdp > max.gdp ? s : max
@@ -56,7 +56,7 @@ app.get("/states/highest-gdp", (req, res) => {
     res.status(200).json(highest);
 });
 
-
+// GET: Retrieve state by ID
 app.get("/states/:id", (req, res) => {
     const stateId = Number(req.params.id);
     const state = states.find(s => s.id === stateId);
@@ -68,8 +68,7 @@ app.get("/states/:id", (req, res) => {
     res.status(200).json(state);
 });
 
-
-
+// POST: Create a new state
 app.post("/states", (req, res) => {
     const newState = {
         id: states.length > 0 ? states[states.length - 1].id + 1 : 1,
@@ -84,8 +83,7 @@ app.post("/states", (req, res) => {
     res.status(201).json(newState);
 });
 
-
-
+// PUT: Update entire state object by ID
 app.put("/states/:id", (req, res) => {
     const stateId = Number(req.params.id);
     const index = states.findIndex(s => s.id === stateId);
@@ -100,7 +98,7 @@ app.put("/states/:id", (req, res) => {
     res.status(200).json(states[index]);
 });
 
-
+// PUT: Update only the budget of a state
 app.put("/states/:id/budget", (req, res) => {
     const stateId = Number(req.params.id);
     const index = states.findIndex(s => s.id === stateId);
@@ -113,8 +111,7 @@ app.put("/states/:id/budget", (req, res) => {
     res.status(200).json(states[index]);
 });
 
-
-
+// PUT: Update only the population of a state
 app.put("/states/:id/population", (req, res) => {
     const stateId = Number(req.params.id);
     const index = states.findIndex(s => s.id === stateId);
@@ -127,8 +124,7 @@ app.put("/states/:id/population", (req, res) => {
     res.status(200).json(states[index]);
 });
 
-
-
+// PATCH: Update only the literacy rate of a state
 app.patch("/states/:id/literacy", (req, res) => {
     const stateId = Number(req.params.id);
     const index = states.findIndex(s => s.id === stateId);
@@ -141,8 +137,7 @@ app.patch("/states/:id/literacy", (req, res) => {
     res.status(200).json(states[index]);
 });
 
-
-
+// PATCH: Update only the GDP of a state
 app.patch("/states/:id/gdp", (req, res) => {
     const stateId = Number(req.params.id);
     const index = states.findIndex(s => s.id === stateId);
@@ -155,8 +150,7 @@ app.patch("/states/:id/gdp", (req, res) => {
     res.status(200).json(states[index]);
 });
 
-
-
+// PATCH: Partially update state by ID
 app.patch("/states/:id", (req, res) => {
     const stateId = Number(req.params.id);
     const index = states.findIndex(s => s.id === stateId);
@@ -169,8 +163,7 @@ app.patch("/states/:id", (req, res) => {
     res.status(200).json(states[index]);
 });
 
-
-
+// DELETE: Delete state by ID
 app.delete("/states/:id", (req, res) => {
     const stateId = Number(req.params.id);
     const index = states.findIndex(s => s.id === stateId);
@@ -183,8 +176,7 @@ app.delete("/states/:id", (req, res) => {
     res.status(204).send();
 });
 
-
-
+// DELETE: Delete state by name
 app.delete("/states/name/:stateName", (req, res) => {
     const stateName = req.params.stateName.toLowerCase();
     const index = states.findIndex(
@@ -199,8 +191,7 @@ app.delete("/states/name/:stateName", (req, res) => {
     res.status(204).send();
 });
 
-
-
+// DELETE: Delete all states with literacy rate below specified percentage
 app.delete("/states/low-literacy/:percentage", (req, res) => {
 
     const percentage = Number(req.params.percentage);
